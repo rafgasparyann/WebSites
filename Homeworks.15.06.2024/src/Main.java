@@ -115,7 +115,7 @@ public class Main {
 //        int number = 0;
 //
 //        while (count < 100) {
-//            if (isNatural(number) == true) {
+//            if (isPrime(number) == true) {
 //                System.out.print(number + " ");
 //                count++;
 //            }
@@ -129,8 +129,7 @@ public class Main {
 //            numbers[i] = (int) (Math.random() * 101);
 //        }
 //
-//        int max = numbers[0], min = numbers[0];
-//        int maxIndex = 0, minIndex = 0;
+//        int max = numbers[0], min = numbers[0], maxIndex = 0, minIndex = 0;
 //
 //        for (int i = 0; i < numbers.length; i++) {
 //            if (numbers[i] > max) {
@@ -216,10 +215,11 @@ public class Main {
 //            }
 //            System.out.println();
 //        }
+//
     }
 
 
-    public static boolean isNatural(int num) {
+    public static boolean isPrime(int num) {
         if (num < 2) {
             return false;
         }

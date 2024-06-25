@@ -9,8 +9,15 @@ public class Main {
         Connection connection = connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/university", "root", "admin");
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery("select * from student");
-        while (resultSet.next()) {
+
+//        while (resultSet.next()) {
+//            System.out.println(resultSet.getInt(1) + " " + resultSet.getString(2) + " " + resultSet.getString(3) + " " + resultSet.getDate(4) + " " + resultSet.getInt(5));
+//        }
+
+        int count = 0;
+        while (resultSet.next() && count < 3) {
             System.out.println(resultSet.getInt(1) + " " + resultSet.getString(2) + " " + resultSet.getString(3) + " " + resultSet.getDate(4) + " " + resultSet.getInt(5));
+            count++;
         }
     }
 }
