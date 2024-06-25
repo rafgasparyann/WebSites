@@ -19,5 +19,6 @@ public class Main {
             System.out.println(resultSet.getInt(1) + " " + resultSet.getString(2) + " " + resultSet.getString(3) + " " + resultSet.getDate(4) + " " + resultSet.getInt(5));
             count++;
         }
+
     }
 }
