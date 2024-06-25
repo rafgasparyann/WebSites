@@ -1,0 +1,60 @@
+Index: src/BubbleSort.java
+===================================================================
+diff --git a/src/BubbleSort.java b/src/BubbleSort.java
+deleted file mode 100644
+--- a/src/BubbleSort.java	(revision cd7ab3060474be1996eff0da0fdb7764016acbd5)
++++ /dev/null	(revision cd7ab3060474be1996eff0da0fdb7764016acbd5)
+@@ -1,18 +0,0 @@
+-public class BubbleSort {
+-    public static void bubbleSort(double[] array) {
+-        int n = array.length;
+-        boolean swapped;
+-        do {
+-            swapped = false;
+-            for (int i = 1; i < n; i++) {
+-                if (array[i - 1] > array[i]) {
+-                    double temp = array[i - 1];
+-                    array[i - 1] = array[i];
+-                    array[i] = temp;
+-                    swapped = true;
+-                }
+-            }
+-            n--;
+-        } while (swapped);
+-    }
+-}
+Index: src/Student.java
+===================================================================
+diff --git a/src/Student.java b/src/Student.java
+deleted file mode 100644
+--- a/src/Student.java	(revision cd7ab3060474be1996eff0da0fdb7764016acbd5)
++++ /dev/null	(revision cd7ab3060474be1996eff0da0fdb7764016acbd5)
+@@ -1,9 +0,0 @@
+-class Student {
+-    String name;
+-    int score;
+-
+-    Student(String name, int score) {
+-        this.name = name;
+-        this.score = score;
+-    }
+-}
+\ No newline at end of file
+Index: ../LessonExercise.08.06.2024/src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Main {\r\n    public static void main(String[] args) {\r\n        \r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../LessonExercise.08.06.2024/src/Main.java b/../LessonExercise.08.06.2024/src/Main.java
+--- a/../LessonExercise.08.06.2024/src/Main.java	(revision cd7ab3060474be1996eff0da0fdb7764016acbd5)
++++ b/../LessonExercise.08.06.2024/src/Main.java	(date 1717832408003)
+@@ -1,5 +1,5 @@
+ public class Main {
+     public static void main(String[] args) {
+-        
++
+     }
+ }
+\ No newline at end of file
