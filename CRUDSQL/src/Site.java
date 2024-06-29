@@ -42,6 +42,6 @@ public class Site {
                 "stid=" + stid +
                 ", name='" + name + '\'' +
                 ", year=" + year +
-                '}';
+                '}' + "\n";
     }
 }
