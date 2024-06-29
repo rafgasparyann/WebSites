@@ -32,4 +32,22 @@ public class PhoneDAO {
             System.out.println(phoneList.get(i).getStid() + " " + phoneList.get(i).getProv() + " " + phoneList.get(i).getNumber());
         }
     }
+
+    public void read() throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        ResultSet rs = statement.executeQuery("select * from phone");
+        while (rs.next()) {
+            System.out.println(rs.getInt("stid") + " " + rs.getString("prov") + " " + rs.getInt("number"));
+        }
+    }
+
+    public void delete(String num) throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        statement.executeUpdate("delete from phone where number=" + num);
+    }
+
+    public void update(String num, int stid,String prov) throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        statement.executeUpdate("update phone set number=" + num + " where stid=" + stid + " and prov='" + prov+"'");
+    }
 }

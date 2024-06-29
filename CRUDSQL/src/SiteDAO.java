@@ -27,9 +27,27 @@ public class SiteDAO {
         }
     }
 
-    public void printList() {
+    public void printList() throws SQLException {
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i).getStid() + " " + list.get(i).getName() + " " + list.get(i).getYear());
         }
+    }
+
+    public void read() throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        ResultSet rs = statement.executeQuery("select * from site");
+        while (rs.next()) {
+            System.out.println(rs.getInt("stid") + " " + rs.getString("name") + " " + rs.getInt("year"));
+        }
+    }
+
+    public void delete(String name) throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        statement.executeUpdate("delete from site where name='" + name + "'");
+    }
+
+    public void update(String name, int stid, int year) throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        statement.executeUpdate("update site set name='" + name + "' where stid=" + stid + " and year=" + year);
     }
 }
