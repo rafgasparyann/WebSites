@@ -13,5 +13,12 @@ public class Main {
         StudentDAO studentDAO = new StudentDAO();
         studentDAO.fillStudent();
         studentDAO.printStudentList();
+
+        System.out.println("------------------------------------------------------");
+
+        Methods methods = new Methods();
+        methods.read("site");
+
+        methods.delete("fn");
     }
 }
