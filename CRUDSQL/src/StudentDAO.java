@@ -62,5 +62,11 @@ public class StudentDAO {
             System.out.println(rs.getInt("stid") + " " + rs.getString("name") + " " + rs.getString("surname") + " " + rs.getDate("date") + " " + rs.getInt("pay"));
         }
     }
+
+    public void insert(String name, String surname, LocalDate date, int pay) throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        statement.executeUpdate("insert into student values (null, '" + name + "', '" + surname + "', '" + date.toString() + "', " + pay + ")");
+    }
+
 }
 

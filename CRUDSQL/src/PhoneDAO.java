@@ -46,9 +46,9 @@ public class PhoneDAO {
         statement.executeUpdate("delete from phone where number=" + num);
     }
 
-    public void update(String num, int stid,String prov) throws SQLException {
+    public void update(String num, int stid, String prov) throws SQLException {
         Statement statement = ConnectionDB.connectionDB().createStatement();
-        statement.executeUpdate("update phone set number=" + num + " where stid=" + stid + " and prov='" + prov+"'");
+        statement.executeUpdate("update phone set number=" + num + " where stid=" + stid + " and prov='" + prov + "'");
     }
 
     public void search(int stid) throws SQLException {
@@ -58,4 +58,11 @@ public class PhoneDAO {
             System.out.println(rs.getInt("stid") + " " + rs.getString("prov") + " " + rs.getInt("number"));
         }
     }
+
+    public void insert(int stid, String prov, int number) throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        statement.executeUpdate("insert into phone values (" + stid + ", '" + prov + "', " + number + ")");
+        System.out.println("Insert has been successful");
+    }
+
 }

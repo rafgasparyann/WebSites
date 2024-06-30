@@ -58,4 +58,10 @@ public class SiteDAO {
             System.out.println(rs.getInt("stid") + " " + rs.getString("name") + " " + rs.getInt("year"));
         }
     }
+
+    public void insert(int stid, String name, int year) throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        statement.executeUpdate("insert into site values (" + stid + ", '" + name + "', " + year + ")");
+    }
+
 }
