@@ -54,5 +54,13 @@ public class StudentDAO {
         Statement statement = ConnectionDB.connectionDB().createStatement();
         statement.executeUpdate("update student set name='" + name + "' where stid=" + stid);
     }
+
+    public void search(String name) throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        ResultSet rs = statement.executeQuery("select * from student where name='" + name + "'");
+        while (rs.next()) {
+            System.out.println(rs.getInt("stid") + " " + rs.getString("name") + " " + rs.getString("surname") + " " + rs.getDate("date") + " " + rs.getInt("pay"));
+        }
+    }
 }
 

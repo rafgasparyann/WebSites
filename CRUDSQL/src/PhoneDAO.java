@@ -50,4 +50,12 @@ public class PhoneDAO {
         Statement statement = ConnectionDB.connectionDB().createStatement();
         statement.executeUpdate("update phone set number=" + num + " where stid=" + stid + " and prov='" + prov+"'");
     }
+
+    public void search(int stid) throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        ResultSet rs = statement.executeQuery("select * from phone where stid=" + stid);
+        while (rs.next()) {
+            System.out.println(rs.getInt("stid") + " " + rs.getString("prov") + " " + rs.getInt("number"));
+        }
+    }
 }

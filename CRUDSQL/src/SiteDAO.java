@@ -50,4 +50,12 @@ public class SiteDAO {
         Statement statement = ConnectionDB.connectionDB().createStatement();
         statement.executeUpdate("update site set name='" + name + "' where stid=" + stid + " and year=" + year);
     }
+
+    public void search(String name) throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        ResultSet rs = statement.executeQuery("select * from site where name='" + name + "'");
+        while (rs.next()) {
+            System.out.println(rs.getInt("stid") + " " + rs.getString("name") + " " + rs.getInt("year"));
+        }
+    }
 }
