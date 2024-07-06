@@ -18,6 +18,13 @@ public class Student {
         this.pay = pay;
     }
 
+    public Student(String name, String surname, LocalDate date, int pay) {
+        this.name = name;
+        this.surname = surname;
+        this.date = date;
+        this.pay = pay;
+    }
+
     public int getStid() {
         return stid;
     }

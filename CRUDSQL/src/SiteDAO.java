@@ -64,4 +64,21 @@ public class SiteDAO {
         statement.executeUpdate("insert into site values (" + stid + ", '" + name + "', " + year + ")");
     }
 
+    public void create(Site site) throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        int id = site.getStid();
+        String name = site.getName();
+        int year = site.getYear();
+        String str = "insert into site values ('" + id + "', '" + name + "', '" + year + "')";
+        statement.executeUpdate(str);
+        System.out.println("Create has been succesful");
+    }
+
+    public void sort() throws SQLException {
+        Statement statement = ConnectionDB.connectionDB().createStatement();
+        ResultSet rs = statement.executeQuery("select * from site order by stid");
+        while (rs.next()) {
+            System.out.println(rs.getInt("stid") + " " + rs.getString("name") + " " + rs.getInt("year"));
+        }
+    }
 }
