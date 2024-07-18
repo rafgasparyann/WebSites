@@ -25,4 +25,26 @@ public class ConnectionDB {
         Statement statement = connection.createStatement();
         statement.executeUpdate(query);
     }
+
+    public void update(String id, String name, String surname, String pay) throws SQLException {
+        String query = "UPDATE student SET ";
+        boolean first = true;
+        if (!name.isEmpty()) {
+            query += "name = '" + name + "'";
+            first = false;
+        }
+        if (!surname.isEmpty()) {
+            if (!first) query += ", ";
+            query += "surname = '" + surname + "'";
+            first = false;
+        }
+        if (!pay.isEmpty()) {
+            if (!first) query += ", ";
+            query += "pay = " + pay;
+        }
+        query += " WHERE stid = " + id;
+        Connection connection = connectionDB();
+        Statement statement = connection.createStatement();
+        statement.executeUpdate(query);
+    }
 }
