@@ -81,6 +81,10 @@ public class DatabaseGUI extends JFrame implements ActionListener {
         textArea.setText("Deleted data with ID: " + id);
     }
 
+    /**
+     * Homework21Jul24
+     */
+
     private void updateData() throws SQLException {
         String id = idField.getText();
         String name = nameField.getText();
@@ -89,4 +93,5 @@ public class DatabaseGUI extends JFrame implements ActionListener {
         connectionDB.update(id, name, surname, pay);
         textArea.setText("Updated data with ID: " + id);
     }
+
 }

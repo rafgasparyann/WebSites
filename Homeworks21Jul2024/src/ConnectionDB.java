@@ -42,7 +42,7 @@ public class ConnectionDB {
             if (!first) query += ", ";
             query += "pay = " + pay;
         }
-        query += " WHERE stid = " + id;
+        query += " where stid = " + id;
         Connection connection = connectionDB();
         Statement statement = connection.createStatement();
         statement.executeUpdate(query);
